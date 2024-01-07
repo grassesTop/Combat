@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463cfdd17e319dd4ca575e9809283ad8, type: 3}
+  m_Name: Ice
+  m_EditorClassIdentifier: 
+  thingName: Ice
+  description: "\u51B0,\u6709\u70B9\u786C,\u6709\u70B9\u8106,\u6709\u70B9\u51C9"
+  hardness: 3
+  states: 0
+  energyLevel: 3
+  energyType: 1
+  energyCount: 1
