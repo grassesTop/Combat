@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1cbd8925c45a2134498465fca42a3729
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - data: {fileID: 11400000, guid: ceb202f0c248c624c8f1ae5ae8775639, type: 2}
+  - resistances: {fileID: 11400000, guid: 7f45cd208235fae4ab5decd7a8dca623, type: 2}
+  - mCollider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

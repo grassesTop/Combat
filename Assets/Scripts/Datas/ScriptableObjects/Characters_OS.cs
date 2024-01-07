@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Character", menuName = "ScriptableObejcts/Characters")]
 public class Characters_OS : ScriptableObject
 {
     public string characterName;

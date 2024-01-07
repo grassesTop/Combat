@@ -5,14 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public abstract class Things : MonoBehaviour, IThing
 {
-    public Thing_OS data;
+    public Things_OS data;
+    public Resistances_OS resistance;
     public int elementCount;
     private Collider mCollider;
 
     private void Awake()
     {
         mCollider = GetComponent<Collider>();
-        gameObject.tag = "Thing";
+        gameObject.tag = Tags.Thing;
     }
 
     public int GetEnergyCount()
@@ -20,7 +21,7 @@ public abstract class Things : MonoBehaviour, IThing
         return elementCount;
     }
 
-    public Thing_OS OriginInfo()
+    public Things_OS OriginInfo()
     {
         return data;
     }
@@ -38,8 +39,13 @@ public abstract class Things : MonoBehaviour, IThing
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Thing")) {
+        if (other.CompareTag(Tags.Thing)) {
             React(other.GetComponent<IThing>());
         }
+    }
+
+    public Resistances_OS GetResistances()
+    {
+        return resistance;
     }
 }

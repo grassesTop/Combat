@@ -12,4 +12,16 @@ public interface ICharacter
     RaceEnum GetRace();
     int GetMaxHealth();
     CampEnum GetCamp();
+    Resistances_OS GetResistances();
+
+    void TakeDamage(int damage);
+
+    void RecoverHealth(int point);
+
+    List<IEffect> GetEffects();
+
+    int GetCurrentHealth();
+
+    string GetElementList();
+
 }

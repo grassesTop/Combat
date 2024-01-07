@@ -4,12 +4,14 @@ using UnityEngine;
 
 public interface IThing
 {
-    Thing_OS OriginInfo();
+    Things_OS OriginInfo();
 
     int GetEnergyCount();
 
     bool React(IThing otherThing);
 
     bool Consume(int num);
+
+    Resistances_OS GetResistances();
 
 }

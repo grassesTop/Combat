@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff709cd6c692624aacd6973b31fbc1d, type: 3}
+  m_Name: XiaoMingCharacter
+  m_EditorClassIdentifier: 
+  characterName: XiaoMing
+  description: "\u9ED8\u9ED8\u65E0\u95FB\u7684\u65B0\u624B"
+  level: 1
+  race: 0
+  maxHealth: 100
+  camp: 0

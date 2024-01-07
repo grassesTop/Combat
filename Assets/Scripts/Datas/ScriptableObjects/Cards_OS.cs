@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Card", menuName = "ScriptableObejcts/Cards")]
 public class Cards_OS : ScriptableObject
 {
     public string cardName;
@@ -18,10 +19,10 @@ public class Cards_OS : ScriptableObject
 
 public enum SpellTypes
 {
-    Normal, Fast
+    Directional, Range, RollCall, Ballistic
 }
 
 public enum CardTags
 {
-
+    
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Thing", menuName = "ScriptableObejcts/Things")]
-public class Thing_OS : ScriptableObject
+public class Things_OS : ScriptableObject
 {
     public string thingName;
     public string description;
@@ -19,7 +19,7 @@ public class Thing_OS : ScriptableObject
 
 public enum EnergyTypes
 {
-    Heat, Cold, Impact, Penetrate, ForceField, Damp, None
+    None, Heat, Cold, Crush, Penetrate, ForceField, Damp, Poison, Spirit, Electric, Slash, Recover
 }
 
 public enum ThingStates
