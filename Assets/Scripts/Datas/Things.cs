@@ -9,6 +9,7 @@ public abstract class Things : MonoBehaviour, IThing
     public Resistances_OS resistance;
     public int elementCount;
     private Collider mCollider;
+    private int currentHardness;
 
     private void Awake()
     {
@@ -47,5 +48,10 @@ public abstract class Things : MonoBehaviour, IThing
     public Resistances_OS GetResistances()
     {
         return resistance;
+    }
+
+    public int GetCurrentHardness()
+    {
+        return currentHardness;
     }
 }

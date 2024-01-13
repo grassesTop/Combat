@@ -14,4 +14,6 @@ public interface IThing
 
     Resistances_OS GetResistances();
 
+    int GetCurrentHardness();
+
 }

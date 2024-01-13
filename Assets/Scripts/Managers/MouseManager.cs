@@ -39,7 +39,6 @@ public class MouseManager : Singleton<MouseManager>
     private void OnCombatState()
     {
         OpenMenu();
-        MoveToPosition();
     }
     private void OnSpellState()
     {
@@ -56,17 +55,5 @@ public class MouseManager : Singleton<MouseManager>
         }
     }
 
-    private void MoveToPosition()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            var camera = Camera.main;
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Ground")))
-            {
-                OnMoveToPositionActions?.Invoke(hit);
-            }
-        }
-    }
+    
 }

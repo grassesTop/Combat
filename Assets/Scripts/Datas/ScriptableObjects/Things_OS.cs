@@ -7,7 +7,7 @@ public class Things_OS : ScriptableObject
     public string thingName;
     public string description;
 
-    //硬度,物体碰撞时,可能发生破坏
+    //硬度,物体碰撞时,可能发生破坏,固体才需要这个属性
     public int hardness;
     //形态, 模拟物体的体积占用情况
     public ThingStates states;

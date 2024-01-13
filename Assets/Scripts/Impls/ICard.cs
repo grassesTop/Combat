@@ -5,5 +5,6 @@ using UnityEngine;
 public interface ICard 
 {
     Cards_OS OriginInfo();
+    void Invoke();
 
 }

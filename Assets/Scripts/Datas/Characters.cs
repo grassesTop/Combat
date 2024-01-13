@@ -16,6 +16,7 @@ public abstract class Characters : MonoBehaviour, ICharacter
     private Collider mCollider;
     private bool isOperating;
     private Rigidbody mRigidbody;
+    private ICard card = new FireBall();
     private void Awake()
     {
         mCollider = GetComponent<Collider>();
@@ -25,18 +26,10 @@ public abstract class Characters : MonoBehaviour, ICharacter
 
     private void OnEnable()
     {
-        if (MouseManager.IsInitialized)
-        {
-            MouseManager.Instance.OnMoveToPositionActions += OnMoveToPosition;
-        }
     }
 
     private void OnDisable()
     {
-        if (MouseManager.IsInitialized)
-        {
-            MouseManager.Instance.OnMoveToPositionActions -= OnMoveToPosition;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -230,8 +223,28 @@ public abstract class Characters : MonoBehaviour, ICharacter
         return elementList;
     }
 
-    private void OnMoveToPosition(RaycastHit hit) {
-        Debug.Log("OnMoveToPosition");
-        mRigidbody.AddForce(Vector3.forward * 30);
+    protected virtual void Update()
+    {
+        if (card != null)
+        {
+            SpellSkillToPoint();
+        }
+    }
+
+    private void SpellSkillToPoint()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            var camera = Camera.main;
+            var ray = camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Ground")))
+            {
+                Debug.Log("card spell");
+                ((FireBall)card).startPosition = transform.position;
+                ((FireBall)card).endPosition = hit.point;
+                card.Invoke();
+            }
+        }
     }
 }

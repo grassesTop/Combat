@@ -4,15 +4,8 @@ using UnityEngine;
 public class XiaoMing : Characters
 {
 
-    // Use this for initialization
-    void Start()
+/*    protected override void Update()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+        base.Update();
+    }*/
 }
