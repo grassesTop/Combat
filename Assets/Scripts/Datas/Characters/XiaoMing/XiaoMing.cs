@@ -4,8 +4,16 @@ using UnityEngine;
 public class XiaoMing : Characters
 {
 
-/*    protected override void Update()
+    /*    protected override void Update()
+        {
+            base.Update();
+        }*/
+
+
+    private void Start()
     {
-        base.Update();
-    }*/
+        Debug.Log("set playing characeter");
+        CombatManager.Instance.playingCharacter = this;
+    }
+
 }

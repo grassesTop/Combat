@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Collider))]
 public abstract class Characters : MonoBehaviour, ICharacter
@@ -16,7 +17,7 @@ public abstract class Characters : MonoBehaviour, ICharacter
     private Collider mCollider;
     private bool isOperating;
     private Rigidbody mRigidbody;
-    private ICard card = new FireBall();
+    private ICard spellCard;
     private void Awake()
     {
         mCollider = GetComponent<Collider>();
@@ -26,7 +27,9 @@ public abstract class Characters : MonoBehaviour, ICharacter
 
     private void OnEnable()
     {
+        
     }
+
 
     private void OnDisable()
     {
@@ -225,26 +228,26 @@ public abstract class Characters : MonoBehaviour, ICharacter
 
     protected virtual void Update()
     {
-        if (card != null)
-        {
-            SpellSkillToPoint();
-        }
+        SpellSkillToPoint();
     }
 
     private void SpellSkillToPoint()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (spellCard != null)
         {
-            var camera = Camera.main;
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Ground")))
-            {
-                Debug.Log("card spell");
-                ((FireBall)card).startPosition = transform.position;
-                ((FireBall)card).endPosition = hit.point;
-                card.Invoke();
-            }
+            Debug.Log("card spell");
+            spellCard.Invoke(this);
+            spellCard = null;
         }
+    }
+
+    public void SetSpellCard(ICard card)
+    {
+        spellCard = card;
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }

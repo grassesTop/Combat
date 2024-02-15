@@ -13,6 +13,7 @@ public class CameraManager : Singleton<CameraManager>
 
     protected override void Awake()
     {
+        base.Awake();
         MainCamera = Camera.main;
     }
 
@@ -28,6 +29,11 @@ public class CameraManager : Singleton<CameraManager>
         if (scrollWheel != 0) {
             ScaleCamera(scrollWheel);
         }
+        if (Input.GetMouseButton((int)MouseButton.Middle)) {
+            var x = Input.GetAxis("Mouse X");
+            var y = Input.GetAxis("Mouse Y");
+            MoveCamera(x, y);
+        }
     }
 
     private void RotateCamera(float x, float y) {
@@ -40,6 +46,11 @@ public class CameraManager : Singleton<CameraManager>
     {
         if (FollowTarget == null) return;
         MainCamera.transform.Translate(Vector3.forward * scaleSpeed * scale, Space.Self);
+    }
+
+    private void MoveCamera(float x, float y) {
+        MainCamera.transform.Translate(Vector3.forward * y, Space.World);
+        MainCamera.transform.Translate(Vector3.right * x, Space.World);
     }
 
     private void CheckFollowDistance() {

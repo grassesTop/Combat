@@ -5,6 +5,9 @@ using UnityEngine;
 public interface ICard 
 {
     Cards_OS OriginInfo();
-    void Invoke();
+    void Invoke(ICharacter character);
+
+    public void SetSpellInfo(SpellInfo info);
+
 
 }

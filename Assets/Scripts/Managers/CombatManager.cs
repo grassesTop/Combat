@@ -6,6 +6,7 @@ using UnityEngine;
 public class CombatManager : Singleton<CombatManager>
 {
     public Combat currentCombat;
+    public ICharacter playingCharacter;
     public Combat StartNewCombat()
     {
         currentCombat = new Combat();
