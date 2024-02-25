@@ -7,18 +7,17 @@ using static Unity.VisualScripting.Member;
 public class FireBall : Cards
 {
     public GameObject fireBall;
-    public Vector3 startPosition;
-    public Vector3 endPosition;
     private Vector3 force;
 
     public FireBall() {
+        originCardInfo = Resources.Load<Cards_OS>("Cards/OS/FireBall");
     }
 
     public override void Invoke()
     {
-        var obj = GameObject.Instantiate(Resources.Load("Cards/FireBall"), startPosition, Quaternion.identity);
+        var obj = GameObject.Instantiate(Resources.Load("Cards/FireBall"), spellInfos.startPosition, Quaternion.identity);
         var rigidbody = obj.GetComponent<Rigidbody>();
-        force = endPosition - startPosition;
+        force = spellInfos.endPosition - spellInfos.startPosition;
         force = force.normalized;
         force *= 100;
         rigidbody.AddForce(force);

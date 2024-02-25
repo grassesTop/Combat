@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5582f6b232b0436408f24560f9088fac, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: fileball
   description: 
-  texture: {fileID: 0}
-  elementEnum: 0
+  texture: {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
+  elementEnum: 3
   spellTime: 0
   spellType: 0
-  Level: 0
-  cost: 
+  Level: 1
+  cost: 1
   tags: 0

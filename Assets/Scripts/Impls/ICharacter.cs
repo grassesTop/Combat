@@ -24,4 +24,8 @@ public interface ICharacter
 
     string GetElementList();
 
+    Transform GetTransform();
+
+    void SaveSpellCard(ICard card);
+
 }

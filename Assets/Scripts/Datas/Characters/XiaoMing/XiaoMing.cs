@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class XiaoMing : Characters
 {
-
-/*    protected override void Update()
+    private void Start()
     {
-        base.Update();
-    }*/
+        CombatManager.Instance.currentCharacter = this;
+    }
 }

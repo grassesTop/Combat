@@ -7,4 +7,6 @@ public interface ICard
     Cards_OS OriginInfo();
     void Invoke();
 
+    void SetSpellInfo(SpellInfos info);
+
 }
